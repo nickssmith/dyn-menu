@@ -14,7 +14,7 @@ class csv_shit(object):
 
         with open(file_to_read, newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
-            print("contents of one.csv")
+            print("contents of two.csv")
             for row in reader:
                 titles.append(row[0])
                 cmds.append(row[1])
@@ -33,6 +33,6 @@ class csv_shit(object):
 
 csv_obj = csv_shit()
 
-titles,cmds,stay_in_menu = csv_obj.read("one.csv")
+titles,cmds,stay_in_menu = csv_obj.read("two.csv")
 menu_items = csv_obj.make_menu(titles,cmds)
 print(menu_items)

@@ -32,6 +32,10 @@ class Menu(object):
 
         #get numbers to exectue
         self.numbers_to_listen_to = list(range(1,len(items)+2))
+        self.numbers_to_listen_to = list(range(1,len(items)+2))
+        if len(self.numbers_to_listen_to) > 9:
+            self.numbers_to_listen_to = self.numbers_to_listen_to[:9]
+
         self.letters_to_listen_to = []
 
         self.temp_items = []
@@ -41,7 +45,7 @@ class Menu(object):
             next_item = False
             for letter in title:
 
-                if letter not in set(self.letters_to_listen_to) and not next_item:
+                if not (letter.lower() in set(self.letters_to_listen_to)) and (not next_item):
                     self.letters_to_listen_to.append(letter.lower())
 
                     new_title = str(title[:i])+"["+letter+"]"+str(title[i+1:])
@@ -72,7 +76,7 @@ class Menu(object):
         self.panel.top()
         self.panel.show()
         self.window.clear()
-        self.window.addstr("The target is "+self.get_target())
+        self.window.addstr("       "+self.get_target().replace(".csv",""))
         global current_title
 
         while True:
@@ -85,7 +89,7 @@ class Menu(object):
                     mode = curses.A_NORMAL
 
                 msg = '%d. %s' % (index+1, item[0])
-                self.window.addstr(1+index, 1, msg, mode)
+                self.window.addstr(2+index, 1, msg, mode)
 
             key = self.window.getch()
 
@@ -109,7 +113,8 @@ class Menu(object):
 
             else:
                 print("key was",key)
-                #print(self.letters_to_listen_to)
+                print(self.letters_to_listen_to)
+                print(self.numbers_to_listen_to)
                 #print(self.items)
                 for n in self.numbers_to_listen_to:
                     if key == ord(str(n)):
@@ -145,19 +150,19 @@ class csv_shit(object):
     def read(self,file_to_read):
         titles = []
         cmds = []
-        stay_in_menu = []
+        #stay_in_menu = []
 
         with open(file_to_read, newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=',')
-            print("contents of one.csv")
+            print("contents of two.csv")
             for row in reader:
                 titles.append(row[0])
                 cmds.append(row[1])
-                stay_in_menu.append([2])
+                #stay_in_menu.append([2])
                 title_to_cmd[row[0]] = row[1]
                 print(''.join(row))
 
-        return titles,cmds,stay_in_menu
+        return titles,cmds#,stay_in_menu
 
     def make_menu(self,titles,cmds):
         runner = sys_runner()
@@ -179,6 +184,17 @@ class sys_runner(object):
         current_title = current_title.replace("[","").replace("]","")
         print(current_title)
         print(title_to_cmd[current_title])
+
+        #if there are arguments to pass to scrpts do it
+        command_to_write = title_to_cmd[current_title]
+        if len(sys.argv) > 2:
+            args_to_add = sys.argv[2:]
+            command_to_write+=" "+" ".join(args_to_add)
+        print(command_to_write)
+        with open("temp","w") as temp:
+            temp.write(str(command_to_write))
+            temp.close()
+        exit(0)
         #TODO make it make temp
 
 
@@ -194,7 +210,7 @@ class MyApp(object):
 
         csv_obj = csv_shit()
 
-        titles, cmds, stay_in_menu = csv_obj.read(target)
+        titles, cmds = csv_obj.read(target)
         menu_items = csv_obj.make_menu(titles, cmds)
 
         main_menu = Menu(menu_items, self.screen)
@@ -203,7 +219,11 @@ class MyApp(object):
 
 
 if __name__ == '__main__':
+    #TODO make pass any args onwards
     print ("This is the name of the script: ", sys.argv[0])
+    print("all args are",sys.argv)
     if len(sys.argv) >= 2:
         target = sys.argv[1]
-    curses.wrapper(MyApp)
+        curses.wrapper(MyApp)
+    else:
+        print("Must specify a csv to menu")

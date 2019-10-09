@@ -1,11 +1,10 @@
 #!/bin/bash
-
 source /home/nick/Scripts/venvs/dyn-menu/bin/activate
 cd /home/nick/Scripts/dyn-menu
 touch temp
 rm temp
-python menu.py two.csv "${@:1}"
+python menu.py PH "${@:1}"
 touch temp
 chmod +x temp
 ./temp
-#rm temp
+rm temp
