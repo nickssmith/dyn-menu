@@ -22,38 +22,38 @@ I recommend making a dir and adding it to your path for easy menu calling
 
 This is "Scripts" folder in my home directory
 
-── bin
-│   ├── lxc-menu
-│   ├── make-menus
-│   └── two
-├── dyn-menu
-│   ├── csvs
-│   │   ├── example.csv
-│   │   ├── lxc-menu.csv
-│   │   └── two.csv
-│   ├── csv_tests.py
-│   ├── make_menus.py
-│   ├── menu.py
-│   ├── pip.conf
-│   ├── readme
-│   ├── test1
-│   └── tmpl
-├── lxc
-│   ├── enter-copy.sh
-│   ├── make-lxc.sh
-│   ├── rm-lxc.sh
-│   ├── set-container-as-local-klaviyo.sh
-│   ├── ssh-container.sh
-│   ├── start-all-lxc.sh
-│   ├── start-container.sh
-│   └── stop-all-lxc.sh
-├── python
-│   ├── ssh_log.csv
-│   └── ssh_manage.py
-└── venvs
-    └── dyn-menu
-        ├── bin
-        │   ├── activate
+    ── bin
+    │   ├── lxc-menu
+    │   ├── make-menus
+    │   └── two
+    ├── dyn-menu
+    │   ├── csvs
+    │   │   ├── example.csv
+    │   │   ├── lxc-menu.csv
+    │   │   └── two.csv
+    │   ├── csv_tests.py
+    │   ├── make_menus.py
+    │   ├── menu.py
+    │   ├── pip.conf
+    │   ├── readme
+    │   ├── test1
+    │   └── tmpl
+    ├── lxc
+    │   ├── enter-copy.sh
+    │   ├── make-lxc.sh
+    │   ├── rm-lxc.sh
+    │   ├── set-container-as-local-klaviyo.sh
+    │   ├── ssh-container.sh
+    │   ├── start-all-lxc.sh
+    │   ├── start-container.sh
+    │   └── stop-all-lxc.sh
+    ├── python
+    │   ├── ssh_log.csv
+    │   └── ssh_manage.py
+    └── venvs
+        └── dyn-menu
+            ├── bin
+            │   ├── activate
 
 
 **Example Menu**
