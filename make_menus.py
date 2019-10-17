@@ -1,5 +1,10 @@
 import os
 
+# change this to where you want menu scripts to be callable
+# recommended to put it somewhere in your $PATH or add it to your $PATH
+bin_path = "/home/nick/Scripts/bin"
+
+
 files = os.listdir(".")
 csvs = []
 csvs_names = os.listdir("csvs")
@@ -15,7 +20,6 @@ for file in files:
 #print(csvs)
 #print(csvs_names)
 
-bin_path = "/home/nick/Scripts/bin"
 
 with open("tmpl","r") as tmpl:
     template = tmpl.read()

@@ -1,6 +1,6 @@
-**Usage**
+**CSVs**
 
--Create a csv file in either the "dyn-menu" or "csvs" directories
+Create a csv file in either the "dyn-menu" or "csvs" directories
    
    It can be structured like example.csv
     
@@ -10,3 +10,50 @@
     pass this a dir to run du on, du -h
     any string, echo "try passing this a dir too" && ls
 
+**Making menu scripts**
+
+To prepare to make menus, open the `tmpl` file (its just plaintext) and change the paths to your local directories
+ (the ones that say `/home/nick/....`)
+
+To make menu scripts, in `make_menus.py` change the `bin_path` variable to a directory where you want menu scripts to be put
+I recommend making a dir and adding it to your path for easy menu calling
+
+**Example**
+
+   example.csv is structured like
+    
+    Menu title 1,echo one
+    Menu title 2,echo "Any bash can go here"
+    menu title 3,echo "even if it needs arguments"
+    pass this a dir to run du on, du -h
+    any string, echo "try passing this a dir too" && ls
+
+  and will show a menu like
+    
+        example
+      
+    1. [M]enu title 
+    2. M[e]nu title 2
+    3. me[n]u title 3
+    4. [p]ass this a dir to run du on
+    5. [a]ny string
+    
+**Usage**
+
+For the example menu
+        example
+      
+    1. [M]enu title 
+    2. M[e]nu title 2
+    3. me[n]u title 3
+    4. [p]ass this a dir to run du on
+    5. [a]ny string
+
+Pushing the number that corresponds to the menu entry will run that entry
+
+Pushing the letter that is bracketed will also run the corresponding menu entry; 1 or "M" to run the first item in the menu
+
+Arrow keys + Enter key can also be used
+
+
+   
