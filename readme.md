@@ -18,7 +18,45 @@ To prepare to make menus, open the `tmpl` file (its just plaintext) and change t
 To make menu scripts, in `make_menus.py` change the `bin_path` variable to a directory where you want menu scripts to be put
 I recommend making a dir and adding it to your path for easy menu calling
 
-**Example**
+**Example file Structure**
+
+This is "Scripts" folder in my home directory
+
+── bin
+│   ├── lxc-menu
+│   ├── make-menus
+│   └── two
+├── dyn-menu
+│   ├── csvs
+│   │   ├── example.csv
+│   │   ├── lxc-menu.csv
+│   │   └── two.csv
+│   ├── csv_tests.py
+│   ├── make_menus.py
+│   ├── menu.py
+│   ├── pip.conf
+│   ├── readme
+│   ├── test1
+│   └── tmpl
+├── lxc
+│   ├── enter-copy.sh
+│   ├── make-lxc.sh
+│   ├── rm-lxc.sh
+│   ├── set-container-as-local-klaviyo.sh
+│   ├── ssh-container.sh
+│   ├── start-all-lxc.sh
+│   ├── start-container.sh
+│   └── stop-all-lxc.sh
+├── python
+│   ├── ssh_log.csv
+│   └── ssh_manage.py
+└── venvs
+    └── dyn-menu
+        ├── bin
+        │   ├── activate
+
+
+**Example Menu**
 
    example.csv is structured like
     
