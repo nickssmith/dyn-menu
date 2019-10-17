@@ -76,7 +76,7 @@ class Menu(object):
         self.panel.top()
         self.panel.show()
         self.window.clear()
-        self.window.addstr("       "+self.get_target().replace(".csv",""))
+        self.window.addstr("       "+os.path.basename(self.get_target()).replace(".csv",""))
         global current_title
 
         while True:
@@ -220,8 +220,8 @@ class MyApp(object):
 
 if __name__ == '__main__':
     #TODO make pass any args onwards
-    print ("This is the name of the script: ", sys.argv[0])
-    print("all args are",sys.argv)
+    #print ("This is the name of the script: ", sys.argv[0])
+    #print("all args are",sys.argv)
     if len(sys.argv) >= 2:
         target = sys.argv[1]
         curses.wrapper(MyApp)

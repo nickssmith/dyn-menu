@@ -1,2 +1,24 @@
 title, echo hey there, 1
 title2, ls, 0
+
+
+
+
+sudo scp -r /usr/lib/python2.7/dist-packages/pip-8.1.1.egg-info ubuntu@10.0.3.221:/
+sudo scp -r /usr/lib/python2.7/dist-packages/pip ubuntu@10.0.3.221:/
+sudo scp -r /usr/share/man/man1/pip.1.gz ubuntu@10.0.3.221:/
+sudo scp -r /usr/share/doc/python-pip ubuntu@10.0.3.221:/
+sudo scp -r /usr/bin/pip2 ubuntu@10.0.3.221:/
+sudo scp -r /usr/bin/pip ubuntu@10.0.3.221:/
+sudo scp -r /usr/share/man/man1/pip2.1.gz ubuntu@10.0.3.221:/
+sudo scp -r /usr/share/doc/python-pip/changelog.Debian.gz ubuntu@10.0.3.221:/
+
+
+scp -R /usr/lib/python2.7/dist-packages/pip-8.1.1.egg-info ubuntu@10.0.3.221/
+/usr/lib/python2.7/dist-packages/pip
+/usr/share/man/man1/pip.1.gz
+/usr/share/doc/python-pip
+/usr/bin/pip2
+/usr/bin/pip
+/usr/share/man/man1/pip2.1.gz
+/usr/share/doc/python-pip/changelog.Debian.gz

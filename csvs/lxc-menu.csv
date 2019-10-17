@@ -3,8 +3,9 @@ Enter a copy of container,/home/nick/Scripts/lxc/enter-copy.sh
 List containers,sudo lxc-ls
 RM container,/home/nick/Scripts/lxc/rm-lxc.sh
 Start All containers,/home/nick/Scripts/lxc/start-all-lxc.sh
-Start container,sudo lxc-start
+Start container,/home/nick/Scripts/lxc/start-container.sh
 Stop All containers,/home/nick/Scripts/lxc/stop-all-lxc.sh
 Stop container,sudo lxc-stop
 Info for container,sudo lxc-info
 SSH into container,/home/nick/Scripts/lxc/ssh-container.sh
+Set container as local-klaviyo,/home/nick/Scripts/lxc/set-container-as-local-klaviyo.sh

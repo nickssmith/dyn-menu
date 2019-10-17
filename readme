@@ -1,0 +1,12 @@
+**Usage**
+
+-Create a csv file in either the "dyn-menu" or "csvs" directories
+   
+   It can be structured like example.csv
+    
+    Menu title 1,echo one
+    Menu title 2,echo "Any bash can go here"
+    menu title 3,echo "even if it needs arguments"
+    pass this a dir to run du on, du -h
+    any string, echo "try passing this a dir too" && ls
+
