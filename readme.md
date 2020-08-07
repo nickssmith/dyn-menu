@@ -75,7 +75,10 @@ This is "Scripts" folder in my home directory
     3. me[n]u title 3
     4. [p]ass this a dir to run du on
     5. [a]ny string
-    
+
+  The menu can be called with arguments to give its item (see items 4,5 for example)
+
+
 **Usage**
 
 For the example menu

@@ -101,7 +101,7 @@ class Menu(object):
 
                     #TODO 1st make it print what the cmd is
                     self.target = self.items[self.position]
-                    print(self.target)
+                    #print(self.target)
                     current_title = self.items[self.position][0]
                     self.items[self.position][1]()
 
@@ -113,8 +113,8 @@ class Menu(object):
 
             else:
                 print("key was",key)
-                print(self.letters_to_listen_to)
-                print(self.numbers_to_listen_to)
+                #print(self.letters_to_listen_to)
+                #print(self.numbers_to_listen_to)
                 #print(self.items)
                 for n in self.numbers_to_listen_to:
                     if key == ord(str(n)):
